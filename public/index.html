@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/media-queries.css" />
+    <title>Kindel</title>
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#navbar" class="scrollspy-example">
+    <header class="fixed-top">
+      <!-- menu  -->
+      <nav
+        id="navbar"
+        class="navscroll navbar navbar-expand-lg navbar-dark bg-dark"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><i class="fa fa-ravelry" aria-hidden="true"></i> Kindel</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#inicio"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#novedades">Novedades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#informacion">Información</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#casos">Casos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fa fa-user-circle-o" aria-hidden="true"></i> Inicio
+                  de sesión</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- contenido principal  -->
+      <!-- portada  -->
+      <section id="inicio" class="ancla">
+        <div
+          id="carouselExampleFade"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+          data-bs-pause="false"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./img/robo1.png" class="d-block w-100" alt="Robot 1" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/robo2.png" class="d-block w-100" alt="Robot 2" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/robo3.png" class="d-block w-100" alt="Robot 3" />
+            </div>
+            <div class="overlay"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- info  -->
+      <section>
+        <div class="container">
+          <div class="row my-3">
+            <div class="col-12 col-md mb-2">
+              <div class="card bg-dark text-white">
+                <img src="./img/children.jpg" class="card-img" alt="children" />
+                <div class="card-img-overlay card-blue text-center">
+                  <h5 class="card-title">
+                    Kindel realiza las tareas hogareñas
+                  </h5>
+                  <p class="card-text">
+                    Deja de preocuparte por tareas cotidianas como cocinar,
+                    planchar, aspirar, etc. Kindel hace todo eso por ti y mucho
+                    más. Conoce las funciones más sorprendentes de este pequeño
+                    amigo.
+                  </p>
+                  <a
+                    type="button"
+                    class="btn btn-outline-light btn-card mb-2"
+                    href="./pages/error404.html"
+                    >Descubre mas...</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md mb-2">
+              <div class="card bg-dark text-white">
+                <img
+                  src="./img/cientificos.jpg"
+                  class="card-img"
+                  alt="cientificos"
+                />
+                <div class="card-img-overlay card-red text-center">
+                  <h5 class="card-title">
+                    Kindel utiliza inteligencia artificial para tu beneficio.
+                  </h5>
+                  <p class="card-text">
+                    Nuestros científicos han examinado y probado por décadas la
+                    inteligencia artificial que usa nuestro producto para que
+                    puedas tener en tus manos la tecnología más potente y
+                    sofisticada del mercado.
+                  </p>
+                  <a
+                    type="button"
+                    class="btn btn-outline-light btn-card mb-2"
+                    href="./pages/error404.html"
+                    >Descubre mas...</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md mb-2">
+              <div class="card bg-dark text-white">
+                <img src="./img/boy.jpg" class="card-img" alt="boy" />
+                <div class="card-img-overlay card-blue text-center">
+                  <h5 class="card-title">
+                    Kindel, el compañero ideal para tus hijos.
+                  </h5>
+                  <p class="card-text">
+                    Nuestro producto puede interactuar con los miembros más
+                    pequeños de la familia para ayudarles con sus tareas y jugar
+                    con ellos.
+                  </p>
+                  <a
+                    type="button"
+                    class="btn btn-outline-light btn-card mb-2"
+                    href="./pages/error404.html"
+                    >Descubre mas...</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Parallax  -->
+
+      <section id="novedades" class="ancla">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col p-0">
+              <div class="card bg-dark text-white">
+                <div class="parallax"></div>
+                <div class="card-img-overlay text-center">
+                  <h5 class="card-title">
+                    Kindel ha ganado el premio a invento del año y varias
+                    compañias están deseando tener el suyo.
+                  </h5>
+                  <p class="card-text">
+                    Si desea obtener el descuento por lotes de 10 unidades no
+                    dude en contactarnos.
+                  </p>
+                  <a
+                    href="./pages/error404.html"
+                    type="button"
+                    class="btn btn-light btn-card"
+                  >
+                    Descubre más
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- tarjetas con datos  -->
+      <section>
+        <div class="container">
+          <div class="row mt-3">
+            <div class="col-12 col-md mb-3">
+              <div class="card card-datos py-5 text-center">
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i
+                      class="fa fa-cloud-download fa-2x"
+                      aria-hidden="true"
+                    ></i>
+                  </h3>
+                  <p class="card-subtitle mb-2">+ de 2.5 mil millones</p>
+                  <p class="card-text">de dispositivos con la App de Kindel</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md mb-3">
+              <div class="card card-datos py-5 text-center">
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i class="fa fa-mobile fa-2x" aria-hidden="true"></i>
+                  </h3>
+                  <p class="card-subtitle mb-2">+ de 600 000</p>
+                  <p class="card-text">clientes alrededor del mundo</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md mb-3">
+              <div class="card card-datos py-5 text-center">
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i class="fa fa-globe fa-2x" aria-hidden="true"></i>
+                  </h3>
+                  <p class="card-subtitle mb-2">+ de 2.5 mil millones</p>
+                  <p class="card-text">de activaciones</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- sección información de producto  -->
+      <section id="informacion" class="pb-3 ancla">
+        <div class="container">
+          <div class="row mt-5">
+            <div class="col-12 col-lg-4 pe-lg-3">
+              <h2 class="fw-bold">El robot Kindel</h2>
+              <div class="img-robot">
+                <img src="./img/children.jpg" alt="robotito" />
+              </div>
+            </div>
+            <div class="col-12 col-lg-8">
+              <p>
+                Nuestro robot Kindel es un producto creado con la mayor
+                <b>dedicación</b> posible y con el <b>compromiso</b> de la
+                excelencia que caracteriza a RollingRobotic Group.
+              </p>
+              <p>
+                El pequeño asistente robótico tiene como misión realizar las
+                tareas que usted no quiere hacer y <b>facilitarle la vida</b> a
+                su familia.
+              </p>
+              <p>
+                Con la <b>App</b> que se instala en su teléfono podrá realizar
+                los comandos e instrucciones necesarios para que Kindel se
+                comporte como usted prefiera. No debe preocuparse por un ataque
+                masivo de robots ya que configuramos cada unidad con
+                <b>las tres reglas</b>
+                básicas de comportamiento.
+              </p>
+              <div>
+                <button class="btn btn-primary btn-card">Descubre más</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- casos de exito  -->
+      <section id="casos" class="fondo my-5 pb-5 ancla">
+        <div class="container">
+          <div class="row py-4">
+            <div class="col-12 text-center">
+              <h3 class="fw-bold">Casos de éxitos</h3>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col"></div>
+          </div>
+        </div>
+      </section>
+      <!-- formulario de contacto  -->
+
+      <!-- socios  -->
+
+      <!-- whatsapp  -->
+      <div class="whatsapp">
+        <a href="https://wa.me/5493815392733" target="_blank">
+          <img src="./img/whatsapp_logo.png" alt="whatsapp" />
+        </a>
+      </div>
+    </main>
+
+    <footer class="bg-light text-dark">
+      <!-- Pié de página  -->
+    </footer>
+
+    <!-- Modal -->
+
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://use.fontawesome.com/c2813ccf5b.js"></script>
+
+    <script>
+      //  efecto scroll menú
+    </script>
+  </body>
+</html>

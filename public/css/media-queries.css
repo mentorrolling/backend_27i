@@ -1,0 +1,12 @@
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item {
+    height: 50vh;
+  }
+
+  .card-img-overlay {
+    padding: 10px;
+  }
+  .card-datos .card-subtitle {
+    font-size: 20px;
+  }
+}
