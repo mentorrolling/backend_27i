@@ -14,6 +14,9 @@ class Server {
   }
 
   middleware() {
+    //leer el body
+    this.app.use(express.json());
+
     //Public
     this.app.use(express.static("public"));
   }
