@@ -1,5 +1,7 @@
 const { request, response } = require("express");
 
+const Usuario = require("../models/usuario");
+
 const usuariosGet = (req = request, res) => {
   const { q, limit } = req.query;
 
@@ -10,15 +12,16 @@ const usuariosGet = (req = request, res) => {
   });
 };
 
-const usuarioPost = (req = request, res = response) => {
+const usuarioPost = async (req = request, res = response) => {
   //req =  res = Response
-  const { nombre, id, email } = req.body;
+  const { nombre, email, password } = req.body;
+
+  const usuario = new Usuario({ nombre, email, password });
+  await usuario.save();
 
   res.json({
-    msg: "Petición POST - Controllers",
-    nombre,
-    id,
-    email,
+    msg: "Usuario creado con éxito!",
+    usuario,
   });
 };
 
