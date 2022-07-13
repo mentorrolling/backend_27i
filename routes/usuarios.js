@@ -1,7 +1,11 @@
 const { Router } = require("express");
 const { validarCampos } = require("../middlewares/validar-campos");
 
-const { esRoleValido, emailExiste } = require("../helpers/db-validators");
+const {
+  esRoleValido,
+  emailExiste,
+  existeUsuarioPorId,
+} = require("../helpers/db-validators");
 
 const {
   usuariosGet,
@@ -23,7 +27,6 @@ router.post(
     check("password", "La contraseña debe tener mínimo 6 caracteres").isLength({
       min: 6,
     }),
-
     check("email", "El correo no es válido").isEmail(),
     check("email").custom(emailExiste),
     check("role").custom(esRoleValido),
@@ -33,9 +36,25 @@ router.post(
 );
 
 //PUT Actualizar
-router.put("/:id", usuarioPut);
+router.put(
+  "/:id",
+  [
+    check("id", "No es un ID de Mongo válido").isMongoId(),
+    check("id").custom(existeUsuarioPorId),
+    validarCampos,
+  ],
+  usuarioPut
+);
 
 //DELETE Borrar
-router.delete("/:id", usuarioDelete);
+router.delete(
+  "/:id",
+  [
+    check("id", "No es un ID de Mongo válido").isMongoId(),
+    check("id").custom(existeUsuarioPorId),
+    validarCampos,
+  ],
+  usuarioDelete
+);
 
 module.exports = router;

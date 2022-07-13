@@ -15,7 +15,17 @@ const emailExiste = async (email) => {
   }
 };
 
+//para validar id en ruta PUT
+const existeUsuarioPorId = async (id) => {
+  const existeUsuario = await Usuario.findOne({ _id: id });
+
+  if (!existeUsuario) {
+    throw new Error(`El id ${id} no existe en la BD`);
+  }
+};
+
 module.exports = {
   esRoleValido,
   emailExiste,
+  existeUsuarioPorId,
 };

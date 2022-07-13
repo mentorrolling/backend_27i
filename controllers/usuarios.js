@@ -6,13 +6,23 @@ const bcrypt = require("bcryptjs");
 
 const Usuario = require("../models/usuario");
 
-const usuariosGet = (req = request, res) => {
-  const { q, limit } = req.query;
+const usuariosGet = async (req = request, res) => {
+  const { limite = 5, desde = 0 } = req.query;
+
+  // const usuarios = await Usuario.find({ estado: true })
+  //   .skip(desde)
+  //   .limit(limite);
+
+  // const total = await Usuario.countDocuments({ estado: true });
+
+  const [total, usuarios] = await Promise.all([
+    Usuario.countDocuments({ estado: true }),
+    Usuario.find({ estado: true }).skip(desde).limit(limite),
+  ]);
 
   res.json({
-    msg: "Petición GET - Controllers",
-    q,
-    limit,
+    total,
+    usuarios,
   });
 };
 
@@ -49,19 +59,41 @@ const usuarioPost = async (req = request, res = response) => {
   });
 };
 
-const usuarioPut = (req, res) => {
+const usuarioPut = async (req, res) => {
   //req =  res = Response
   const { id } = req.params;
+  const { _id, password, email, ...resto } = req.body;
+
+  if (password) {
+    //Encriptar la contraseña
+    const salt = bcrypt.genSaltSync();
+    resto.password = bcrypt.hashSync(password, salt);
+  }
+
+  const usuario = await Usuario.findByIdAndUpdate(id, resto, { new: true });
+
   res.json({
-    msg: "Petición PUT - Controllers",
-    id,
+    msg: "Usuario actualizado",
+    usuario,
   });
 };
 
-const usuarioDelete = (req, res) => {
-  //req =  res = Response
+const usuarioDelete = async (req, res) => {
+  const { id } = req.params;
+
+  //Borrar de forma física de la BD
+  // const usuarioBorrado = await Usuario.findByIdAndDelete(id);
+
+  //Inactivar usuario
+  const usuarioBorrado = await Usuario.findByIdAndUpdate(
+    id,
+    { estado: false },
+    { new: true }
+  );
+
   res.json({
-    msg: "Petición DELETE - Controllers",
+    msg: "Usuario eliminado de la BD",
+    usuarioBorrado,
   });
 };
 
