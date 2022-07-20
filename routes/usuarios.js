@@ -19,7 +19,7 @@ const {
 const router = Router();
 const { check } = require("express-validator");
 
-router.get("/", [validarJWT, esAdminRole, validarCampos], usuariosGet);
+router.get("/", [validarJWT, esAdminRole], usuariosGet);
 
 //POST postear
 router.post(
