@@ -7,6 +7,7 @@ class Server {
     this.port = process.env.PORT;
     this.usuariosPath = "/api/usuarios";
     this.authPath = "/api/auth";
+    this.categoriasPath = "/api/categorias";
 
     //Conectar DB
     this.conectarDb();
@@ -32,6 +33,7 @@ class Server {
 
   routes() {
     this.app.use(this.usuariosPath, require("../routes/usuarios"));
+    this.app.use(this.categoriasPath, require("../routes/categorias"));
     this.app.use(this.authPath, require("../routes/auth"));
   }
 
