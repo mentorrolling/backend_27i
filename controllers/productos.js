@@ -89,7 +89,7 @@ const actualizarProducto = async (req, res) => {
 
   const producto = await Producto.findByIdAndUpdate(id, data, { new: true });
 
-  res.status(201).json(producto);
+  res.status(200).json(producto);
 };
 
 //Borrar producto-----------------------------------------------------

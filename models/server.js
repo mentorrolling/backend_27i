@@ -1,4 +1,6 @@
 const express = require("express");
+const cors = require("cors");
+
 const { dbConnection } = require("../database/config");
 
 class Server {
@@ -9,6 +11,7 @@ class Server {
     this.usuariosPath = "/api/usuarios";
     this.categoriasPath = "/api/categorias";
     this.productosPath = "/api/productos";
+    this.buscarPath = "/api/buscar";
 
     //Conectar DB
     this.conectarDb();
@@ -25,6 +28,9 @@ class Server {
   }
 
   middleware() {
+    //CORS
+    this.app.use(cors());
+
     //leer el body
     this.app.use(express.json());
 
@@ -37,6 +43,7 @@ class Server {
     this.app.use(this.usuariosPath, require("../routes/usuarios"));
     this.app.use(this.categoriasPath, require("../routes/categorias"));
     this.app.use(this.productosPath, require("../routes/productos"));
+    this.app.use(this.buscarPath, require("../routes/buscar"));
   }
 
   listen() {

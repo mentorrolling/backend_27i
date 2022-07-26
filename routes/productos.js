@@ -1,12 +1,13 @@
 const { Router } = require("express");
 
 const { check } = require("express-validator");
-
-const { validarCampos } = require("../middlewares/validar-campos");
 const { productoExiste } = require("../helpers/db-validators");
 
-const { validarJWT } = require("../middlewares/validar-jwt");
-const { esAdminRole } = require("../middlewares/validar-role");
+const { validarCampos, validarJWT, esAdminRole } = require("../middlewares");
+
+// const { validarCampos } = require("../middlewares/validar-campos");
+// const { validarJWT } = require("../middlewares/validar-jwt");
+// const { esAdminRole } = require("../middlewares/validar-role");
 
 const {
   obtenerProductos,
@@ -20,6 +21,7 @@ const router = Router();
 
 router.get("/", obtenerProductos);
 
+//Listar producto por id
 router.get(
   "/:id",
   [
